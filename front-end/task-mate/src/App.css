@@ -1,0 +1,175 @@
+.form {
+  height: 100%;
+}
+.mb-3 {
+  height: 20%;
+  margin-bottom: 10px;
+}
+.form-control {
+  height: 45%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5) ;
+  border: 1px solid rgba(0, 0, 0, 0.25) ;
+  color: #fff;
+  border-radius: 8px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control:focus {
+  background-color: rgba(255, 255, 255, 0.35);
+  border-color: #63b3ed;
+  box-shadow: 0 0 0 0.2rem rgba(99, 179, 237, 0.25);
+  color: #fff;
+}
+
+.form-text {
+  color: black;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+.form-label {
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sign-form {
+  padding: 3%;
+}
+
+.user-info,
+.user-sign {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.sign-up,
+.signup1,
+.signup2 {
+  width: 100%;
+}
+.sign-form-label {
+  font-size: 1.1rem;
+}
+#title, .edit, .add{
+  background-color:rgba(255, 255, 255, 0.2);
+  border:1px solid rgba(255, 255, 255, 0.3);
+  color: #e2e8f0;
+}
+.edit-label, .add-label{
+  color: #fff;
+}
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+.edit-option-list, .edit-option, .add-option, .add-option-list{
+  color: black;
+}
+.edit-btn, .add-btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+
+@media (min-width: 481px) {
+  body {
+    max-width: 768px;
+  }
+  .form {
+    padding: 0 8% 0 8%;
+  }
+  .form-control {
+    height: 45%;
+    width: 100%;
+  }
+  .user-info,
+  .user-sign {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .btn{
+    width: 30%;
+    height: 100%;
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 769px) {
+  body {
+    max-width: 1023px;
+  }
+  .form {
+    padding: 0 10% 0 10%;
+  }
+  .form-label {
+    font-size: 1.8rem;
+  }
+  .form-control {
+    height: 40%;
+    width: 100%;
+  }
+  
+}
+
+@media (min-width: 1024px) {
+  body {
+    max-width: 1280px;
+  }
+  .form-label {
+    font-size: 1.5rem;
+  }
+  .form-control {
+    height: 45%;
+    width: 100%;
+    font-size: 1.8rem;
+  }
+  .btn{
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1281px) {
+  body {
+    max-width: 1536px;
+  }
+  .form {
+    padding: 0 20% 0 20%;
+  }
+  .form-label {
+    font-size: 1.5rem;
+  }
+  .form-control {
+    height: 45%;
+    width: 100%;
+    font-size: 1.8rem;
+  }
+}
+@media (min-width: 1537px) {
+  body {
+    max-width: 3000px;
+  }
+  .form-label {
+    font-size: 2.2rem;
+  }
+  .form-control {
+    height: 45%;
+    width: 100%;
+    font-size: 1.8rem;
+  }
+  .form-text {
+    font-size: 1.8rem;
+  }
+  .btn{
+    width: 20%;
+    height: 100%;
+    font-size: 1.6rem;
+  }
+}
