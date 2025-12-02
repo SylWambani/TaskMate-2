@@ -21,11 +21,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^astq&#u=)k!_%r52gi10%o8$v_o_2vt$0&qoztdfa)5xmk_x-'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+
 
 ALLOWED_HOSTS = []
 
@@ -93,19 +91,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'TaskMate.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'taskmate',
-        'HOST': '127.0.0.1',
-        'USER': 'root',
-        'PASSWORD': 'Wambani2000.',
-        'PORT': '3306',
-    }
-}
 
 
 # Password validation
@@ -173,4 +158,32 @@ DJOSER = {
 SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('Bearer','JWT',),
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1)
+}
+
+
+LOGGING ={
+    'version': 1,
+    'disable_existing_loggers':False,
+    'handlers':{
+        'console':{
+            'class':'logging.StreamHandler'
+        },
+        'file':{
+            'class':'logging.FileHandler',
+            'filename':'general.log',
+            'formatter':'verbose'
+        }
+    },
+    'loggers':{
+        '':{
+            'handlers':["console", "file"],
+            'level':os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
+        }
+    },
+    'formatters':{
+        'verbose':{
+            'format':'{asctime} ({levelname})-{name}-{message}',
+            'style':'{'
+        }
+    }
 }
