@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
+  baseURL: 'https://taskmate-2-kxfe.onrender.com',
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
@@ -33,7 +33,7 @@ axiosInstance.interceptors.response.use(
 
       try {
         const res = await axios.post(
-          `${import.meta.env.VITE_API_URL}/auth/jwt/refresh/`,
+          `${"https://taskmate-2-kxfe.onrender.com/auth/jwt/refresh/"}`,
           {
             refresh,
           }
