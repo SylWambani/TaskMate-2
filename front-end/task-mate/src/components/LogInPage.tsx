@@ -16,7 +16,7 @@ const LogInPage = () => {
     const token = localStorage.getItem("access");
     if (!token) return;
 
-    fetch("http://127.0.0.1:8000/to-do/", {
+    fetch("https://taskmate-2-kxfe.onrender.com/to-do/", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -30,11 +30,14 @@ const LogInPage = () => {
     e.preventDefault(); 
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/auth/jwt/create/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username, password }),
-      });
+      const res = await fetch(
+        "https://taskmate-2-kxfe.onrender.com/auth/jwt/create/",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ username, password }),
+        }
+      );
 
       if (!res.ok) throw new Error("Login failed");
 
