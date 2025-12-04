@@ -1,5 +1,5 @@
 import { Box, ChakraProvider } from "@chakra-ui/react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./components/HomePage";
 import LogInPage from "./components/LogInPage";
@@ -7,14 +7,12 @@ import DashBoard from "./components/DashBoard";
 import TasksPage from "./components/TasksPage";
 import AddTaskPage from "./components/AddTaskPage";
 import SignUpPage from "./components/SignUpPage";
-import { system } from "./components/styles/themes";
 import EditPage from "./components/EditPage";
 
 function App() { 
   return (
-    <ChakraProvider value={system}>
       <Box height="100%">
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/taskmate-login" element={<LogInPage />} />
@@ -24,9 +22,8 @@ function App() {
             <Route path="/to-do/add-task" element={<AddTaskPage />} />
             <Route path="/to-do/update-task/:id"element={<EditPage />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </Box>
-    </ChakraProvider>
   );
 }
 
