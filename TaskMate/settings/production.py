@@ -7,7 +7,7 @@ DEBUG = False
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['taskmate-2-kxfe.onrender.com']
 
 DATABASES = {
     'default': dj_database_url.config(
