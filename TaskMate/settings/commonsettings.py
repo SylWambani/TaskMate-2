@@ -13,6 +13,7 @@ from corsheaders.defaults import default_headers
 from pathlib import Path
 from datetime import timedelta
 import os
+import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,11 +22,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
+# Initialize environment manager
+env = environ.Env()
 
-
-
-
-ALLOWED_HOSTS = []
+# Read from .env file if present
+env.read_env(BASE_DIR / ".env")
 
 
 # Application definition
