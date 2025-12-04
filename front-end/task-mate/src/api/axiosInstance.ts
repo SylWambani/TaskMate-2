@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-  baseURL: "http://127.0.0.1:8000", // your backend base URL
+  baseURL: import.meta.env.VITE_API_URL,
+  withCredentials: true,
   headers: {
     "Content-Type": "application/json",
   },
@@ -32,7 +33,7 @@ axiosInstance.interceptors.response.use(
 
       try {
         const res = await axios.post(
-          "http://127.0.0.1:8000/auth/jwt/refresh/",
+          `${import.meta.env.VITE_API_URL}/auth/jwt/refresh/`,
           {
             refresh,
           }
