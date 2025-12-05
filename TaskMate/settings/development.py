@@ -6,6 +6,7 @@ DEBUG = True
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-^astq&#u=)k!_%r52gi10%o8$v_o_2vt$0&qoztdfa)5xmk_x-'
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 DATABASES = {
     'default': {

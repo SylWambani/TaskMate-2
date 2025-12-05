@@ -9,12 +9,6 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 ALLOWED_HOSTS = ['taskmate-2-kxfe.onrender.com', 'localhost']
 
-CORS_ALLOWED_ORIGINS = [
-    "https://sylwambani.github.io",
-    "https://taskmate-2-kxfe.onrender.com",
-]
-
-
 DATABASES = {
     'default': dj_database_url.config(
         default=os.environ['DATABASE_URL'],
@@ -23,9 +17,16 @@ DATABASES = {
     )
 }
 
+CORS_ALLOW_ALL_ORIGINS = False
+
+CORS_ALLOWED_ORIGINS = [
+    "https://sylwambani.github.io",
+    "https://taskmate-2-kxfe.onrender.com",
+]
+
 CSRF_TRUSTED_ORIGINS = [
     "https://sylwambani.github.io",
     "https://taskmate-2-kxfe.onrender.com",
 ]
 
-SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+CORS_ALLOW_CREDENTIALS = True
